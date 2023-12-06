@@ -10,7 +10,7 @@ include_once("conexao.php");
     <button class="btn" onclick="aparecerCadastrar()">+Cadastrar Aluno</button>
     <div id="mostrar" style="display: none;">
         <div>
-            <form action="cadastrarAluno.php" method="post">
+            <form onsubmit="exibirOp()" id="form1" action="cadastrarAluno.php" method="post">
                 <div style="background-color: darkslategray; text-align:center">
                     <h2 style="color: white">Cadastrar Aluno</h2>
 
@@ -18,27 +18,27 @@ include_once("conexao.php");
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="nome" style="width: 12%; text-align:right">Nome: </label>
-                                <input type="text" id="nome" name="nome">
+                                <input type="text" id="nome" name="nome" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="cpf" style="width: 10%; text-align:right">CPF: </label>
-                                <input type="text" id="cpf" name="cpf">
+                                <input type="text" id="cpf" name="cpf" oninput="formatarCPF(this)" required>
                             </div>
                         </div>
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="dtNas" style="width: 12%; text-align:right">Nascimento:</label>
-                                <input type="date" id="dtNas" name="dtNas" style="width: 177px;">
+                                <input type="date" id="dtNas" name="dtNas" style="width: 177px;" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="end" style="width: 10%; text-align:right">Endereço: </label>
-                                <input type="text" id="end" name="end">
+                                <input type="text" id="end" name="end" required>
                             </div>
                         </div>
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="tel" style="width: 12%; text-align:right">Telefone:</label>
-                                <input type="text" id="tel" name="tel">
+                                <input type="text" id="tel" name="tel" required>
                             </div>
                             <input class="btn" type="submit" value="Enviar">
                         </div>
@@ -97,34 +97,34 @@ include_once("conexao.php");
 
             </div>
             <div id="<?= $div ?>" style="display: none;">
-                <form action="editarAluno.php" method="post">
+                <form onsubmit="exibirOp()" id="form2" action="editarAluno.php" method="post">
 
 
                     <div style="background-color:cadetblue; width:100%;">
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="nome" style="width: 12%; text-align:right">Nome: </label>
-                                <input type="text" id="nome" name="nome" value="<?= $alunoNome ?>">
+                                <input type="text" id="nome" name="nome" value="<?= $alunoNome ?>" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="cpf" style="width: 10%; text-align:right">CPF: </label>
-                                <input type="text" id="cpf" name="cpf" value="<?= $alunoCPF ?>">
+                                <input type="text" id="cpf" name="cpf" oninput="formatarCPF(this)" value="<?= $alunoCPF ?>" required>
                             </div>
                         </div>
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="dtNas" style="width: 12%; text-align:right">Data Nascimento:</label>
-                                <input type="text" id="dtNas" name="dtNas" value="<?= $alunoNasc ?>">
+                                <input type="text" id="dtNas" name="dtNas" value="<?= $alunoNasc ?>" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="end" style="width: 10%; text-align:right">Endereço:</label>
-                                <input type="text" id="end" name="end" value="<?= $alunoEnd ?>">
+                                <input type="text" id="end" name="end" value="<?= $alunoEnd ?>" required>
                             </div>
                         </div>
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="tel" style="width: 12%; text-align:right">Telefone:</label>
-                                <input type="text" id="tel" name="tel" value="<?= $alunoTel ?>">
+                                <input type="text" id="tel" name="tel" value="<?= $alunoTel ?>" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="edTid" style="width: 10%; text-align:right">ID:</label>

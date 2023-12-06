@@ -10,7 +10,7 @@ include_once "conexao.php";
     <div id="mostrar" style="display: none;">
 
         <div>
-            <form action="cadastrarAgendamento.php" method="post">
+            <form onsubmit="exibirOp()" action="cadastrarAgendamento.php" method="post">
                 <div style="background-color: darkslategray; text-align:center">
                     <h2 style="color: white">Agendar</h2>
 
@@ -54,11 +54,11 @@ include_once "conexao.php";
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="dt" style="width: 12%; text-align:right">Data:</label>
-                                <input type="date" id="dt" name="dt" style="width: 177px;">
+                                <input type="date" id="dt" name="dt" style="width: 177px;" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="hr" style="width: 10%; text-align:right">Horario: </label>
-                                <input type="time" id="hr" name="hr">
+                                <input type="time" id="hr" name="hr" required>
                             </div>
                         </div>
                         <div style="text-align:center">

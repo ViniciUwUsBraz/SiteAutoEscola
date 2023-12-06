@@ -43,27 +43,27 @@ if ($_GET != null) {
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="marca" style="width: 8%; text-align:right">Marca: </label>
-                                <input type="text" id="marca" name="marca">
+                                <input type="text" id="marca" name="marca" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="modelo" style="width: 8%; text-align:right">Modelo: </label>
-                                <input type="text" id="modelo" name="modelo">
+                                <input type="text" id="modelo" name="modelo" required>
                             </div>
                         </div>
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="ano" style="width: 8%; text-align:right">Ano:</label>
-                                <input type="text" id="ano" name="ano">
+                                <input type="text" id="ano" name="ano" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="placa" style="width: 8%; text-align:right">Placa</label>
-                                <input type="text" id="placa" name="placa">
+                                <input type="text" id="placa" oninput="formatarPlaca(this)" name="placa" required>
                             </div>
                         </div>
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="capacidade" style="width: 8%; text-align:right">Capacidade</label>
-                                <input type="number" id="capacidade" name="capacidade">
+                                <input type="number" id="capacidade" name="capacidade" required>
                             </div>
                             <input class="btn" type="submit" value="Enviar">
                         </div>
@@ -87,27 +87,27 @@ if ($_GET != null) {
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="marca" style="width: 8%; text-align:right">Marca: </label>
-                                <input type="text" id="marca" name="marca" value="<?= $edtMarca ?>">
+                                <input type="text" id="marca" name="marca" value="<?= $edtMarca ?>" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="modelo" style="width: 8%; text-align:right">Modelo: </label>
-                                <input type="text" id="modelo" name="modelo" value="<?= $edtModelo ?>">
+                                <input type="text" id="modelo" name="modelo" value="<?= $edtModelo ?>" required>
                             </div>
                         </div>
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="ano" style="width: 8%; text-align:right">Ano:</label>
-                                <input type="text" id="ano" name="ano" value="<?= $edtAno ?>">
+                                <input type="text" id="ano" name="ano" value="<?= $edtAno ?>" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="placa" style="width: 8%; text-align:right">Placa</label>
-                                <input type="text" id="placa" name="placa" value="<?= $edtPlaca ?>">
+                                <input type="text" id="placa" name="placa" oninput="formatarPlaca(this)" value="<?= $edtPlaca ?>" required>
                             </div>
                         </div>
                         <div style="display: flex;">
                             <div style="display: flex; width:50%">
                                 <label for="capacidade" style="width: 8%; text-align:right">Capacidade</label>
-                                <input type="number" id="capacidade" name="capacidade" value="<?= $edtCap ?>">
+                                <input type="number" id="capacidade" name="capacidade" value="<?= $edtCap ?>" required>
                             </div>
                             <div style="display: flex; width:50%">
                                 <label for="id" style="width: 8%; text-align:right">ID:</label>
